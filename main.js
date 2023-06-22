@@ -1,8 +1,6 @@
 status = "";
 objects = [];
 
-var synth = window.speechSynthesis;
-
 function setup()
 {
     canvas = createCanvas(480, 380);
@@ -35,6 +33,7 @@ function draw()
             if(objects[i].label == object_name)
             {
                 document.getElementById("object_status").innerHTML = object_name +  " found";
+                var synth = window.speechSynthesis;
                 speak_data = object_name + "found";
                 var utter_this = new SpeechSynthesisUtterance(speak_data);
                 synth.speak(utter_this);
